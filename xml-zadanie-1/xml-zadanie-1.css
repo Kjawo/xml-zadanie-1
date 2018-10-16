@@ -21,10 +21,11 @@ bookStore {
 }
 
 book {
-    display: grid;
+    display: block;
+    horizontal-align: left;
     background-color: black;/*var(--color1);*/
     font-size: 50px;
-    text-align: center;
+   /* text-align: center;*/
     padding: 20px;
     overflow: auto;
  /*   grid-template-columns: 200px 200px 200px 200px 200px 200px 200px;*/
@@ -32,33 +33,54 @@ book {
     /*justify-content: space-evenly;*/
 }
 book * {
+    vertical-align: middle;
     margin: auto 0px;
-   /* border: 4px solid white;*/
+    border: 4px solid white;
 }
+
+book:hover {
+    display: attr(authorID);
+}
+/*
 book *::after {
     white-space: pre-wrap;
     font-size: 20px;
-}
+}*/
+
 book:hover {
     border-left : 6px solid var(--color5);
 }
 
+
 title {
-    display: block;
+    display: inline-block;
     grid-column: 2 / span 1;
     grid-row: 1 / span 1;
     font-style: italic;
 }
 title::after {
+    display: block;
     content: "\Atytuł ";
+    font-size: 20px;
 }
 
-/*book[authorID] {
+book::after {
+    border: 4px solid white;
+    display: inline-block;
+    margin: auto 0px;
+    white-space: pre-wrap;
+    font-style: italic;
+    content: attr(authorID)"\A autor";
+}
+/*
+[genreID]::after {
     grid-column: 3 / span 1;
     grid-row: 1 / span 1;
     font-style: italic;
-    content: "lol/Aautor";
+    content: "lolEEEEE";
 }*/
+
+
 /*author:after {
     content: attr("authorID");
 }*/
@@ -110,49 +132,55 @@ book pustyGrid{
 }*/
 
 pages {
-    display: block;
+    display: inline-block;
     grid-column: 4 / span 1;
     grid-row: 1 / span 1;
     text-align: center;
-    color: var(--color5);
     font-size: 50px;
 }
 pages::after {
+    display: block;
     content: "\Aliczba stron";
     white-space: pre-wrap;
     font-size: 20px;
 }
 
 publishYear {
-    display: block;
+    display: inline-block;
     grid-column: 5 / span 1;
     grid-row: 1 / span 1;
 }
 publishYear::after {
+    display: block;
+    font-size: 20px;
     content: "\Arok wydania";
 }
 
 price {
-    display: block;
+    display: inline-block;
     grid-column: 6 / span 1;
     grid-row: 1 / span 1;
 }
 price::after {
+    display: block;
+    font-size: 20px;
     content: "\Azł";
 }
 
 isbn {
-    display: block;
+    display: inline-block;
     grid-column: 7 / span 1;
     grid-row: 1 / span 1;
 }
 isbn::after {
+    display: block;
+    font-size: 20px;
     content: "\AISBN";
 }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 frontCover {
-    display: block;
+    display: inline-block;
     height: 300px;
     grid-column: 1 / span 1;
     grid-row: 1 / span 1;
@@ -169,7 +197,6 @@ frontCover[src*="PaniJeziora.jpg"]          { content: url("PaniJeziora.jpg") }
 frontCover[src*="TheGreenMile.jpg"]         { content: url("TheGreenMile.jpg") }
 frontCover[src*="TheNameoftheRose.jpg"]     { content: url("TheNameoftheRose.jpg") }
 frontCover[src*="TheShinning.jpg"]          { content: url("TheShinning.jpg") }
-/*frontCover[src*="WiezaJaskolki.jpg"]        { content: url("WiezaJaskolki.jpg") }*/
 frontCover[src*="WiezaJaskolki.jpg"]        { content: url("WiezaJaskolki.jpg") }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
