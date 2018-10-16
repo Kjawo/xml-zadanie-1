@@ -70,10 +70,12 @@
 				coverTypeID="paperback" publisherID="superNOWA">
 			<frontCover src="OstatnieZyczenie.jpg" />
 			<title>Ostatnie Życzenie</title>
+			<!--<pustyGrid />-->
 			<pages>288</pages>
 			<publishYear>1993</publishYear>
 			<price>35,99</price>
 			<isbn>978-0-575-08244-1</isbn>
+			<!--<author1> Andrzej Sapkowski </author1>-->
 		</book>
 		<book authorID="ASapko" genreID="fantasy"
 				coverTypeID="paperback" publisherID="superNOWA">
